@@ -4,11 +4,10 @@ Build & Install
 ---------------
 ::
 
-$ mkdir -p build && cd build
-$ cmake ..
+$ ./autogen.sh
+$ ./configure
 $ make
 $ sudo make install
-$ sudo ldconfig
 
 Usage
 -----

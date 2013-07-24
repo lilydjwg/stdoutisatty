@@ -6,7 +6,11 @@
  
 #define PRELOAD_LEN 2048
 #ifndef LIB_FILE
-# define LIB_FILE "libstdoutisatty.so"
+# ifndef LIBDIR
+#  define LIB_FILE "libstdoutisatty.so"
+# else
+#  define LIB_FILE LIBDIR "libstdoutisatty.so"
+# endif
 #endif
 
 int main(int argc, char **argv){

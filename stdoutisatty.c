@@ -6,12 +6,15 @@
  
 #define PRELOAD_LEN 2048
 #ifndef LIB_FILE
-# define LIB_FILE "libstdoutisatty.so"
+# ifndef LIBDIR
+#  define LIB_FILE "libstdoutisatty.so"
+# else
+#  define LIB_FILE LIBDIR "libstdoutisatty.so"
+# endif
 #endif
 
 int main(int argc, char **argv){
   int n = 0;
-  char *preload = NULL;
   char *preload_env;
   char *old_preload = getenv("LD_PRELOAD");
 
@@ -22,11 +25,7 @@ int main(int argc, char **argv){
   setlocale(LC_ALL, "");
 
   preload_env = malloc(PRELOAD_LEN);
-  if(!preload){
-    strcpy(preload_env, LIB_FILE);
-  }else{
-    strcat(preload_env, preload);
-  }
+  strcpy(preload_env, LIB_FILE);
   if(old_preload){
     n = strlen(preload_env);
     preload_env[n] = ':';

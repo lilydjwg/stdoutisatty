@@ -11,7 +11,7 @@
 # ifndef LIBDIR
 #  define LIB_FILE "lib"PROG".so"
 # else
-#  define LIB_FILE LIBDIR"lib"PROG".so"
+#  define LIB_FILE LIBDIR"/lib"PROG".so"
 # endif
 #endif
 

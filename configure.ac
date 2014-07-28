@@ -12,8 +12,7 @@ AM_INIT_AUTOMAKE
 LT_INIT
 
 # Checks for libraries.
-# FIXME: Replace `main' with a function in `-ldl':
-AC_CHECK_LIB([dl], [main])
+AC_CHECK_LIB([dl], [dlsym])
 
 # Checks for header files.
 AC_CHECK_HEADERS([locale.h stdlib.h string.h unistd.h])

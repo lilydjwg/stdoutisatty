@@ -4,12 +4,14 @@
 #include<string.h>
 #include<locale.h>
  
+#define PROG "stdoutisatty"
+
 #define PRELOAD_LEN 2048
 #ifndef LIB_FILE
 # ifndef LIBDIR
-#  define LIB_FILE "libstdoutisatty.so"
+#  define LIB_FILE "lib"PROG".so"
 # else
-#  define LIB_FILE LIBDIR "libstdoutisatty.so"
+#  define LIB_FILE LIBDIR"/lib"PROG".so"
 # endif
 #endif
 
@@ -19,7 +21,7 @@ int main(int argc, char **argv){
   char *old_preload = getenv("LD_PRELOAD");
 
   if(argc == 1){
-    fprintf(stderr, "usage: stdoutisatty command [args]\n");
+    fprintf(stderr, "usage: " PROG " command [args]\n");
     return 1;
   }
   setlocale(LC_ALL, "");

@@ -27,4 +27,4 @@ Use a two-character environment variable ``ISATTY`` to specify whether you want 
 
 Links
 -----
-* `A blog article (Chinese) <http://lilydjwg.is-programmer.com/2013/7/9/pretend-that-stdout-is-a-tty.39922.html>`_
+* `A blog article (Chinese) <https://blog.lilydjwg.me/2013/7/9/pretend-that-stdout-is-a-tty.39922.html>`_
